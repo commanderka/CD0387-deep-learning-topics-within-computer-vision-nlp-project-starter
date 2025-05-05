@@ -18,7 +18,7 @@ def net(device):
         param.requires_grad = False
 
     num_features = model.fc.in_features
-    model.fc = nn.Linear(num_features, 133)
+    model.fc = nn.Sequential(nn.Linear(num_features, 133))
 
     model = model.to(device)
     logger.info("Model creation completed.")
